@@ -24,6 +24,7 @@ class ServerHttpHandler implements HttpHandler {
         // form return body after being handled by program
         try {
             String ret = handler.handleRequest(exchange.getRequestURI());
+            System.out.println("handle called");
             // form the return string and write it on the browser
             exchange.sendResponseHeaders(200, ret.getBytes().length);
             OutputStream os = exchange.getResponseBody();
